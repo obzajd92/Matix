@@ -1,0 +1,4 @@
+## Architectural Protection Matrix
+
+• Non-Rectangular Safety Check (len(current_row) <= col): If a row is shorter than standard layout parameters, the pointer engine flags the constraint violation, skips processing elements that would trigger an IndexError, and steps safely to the next row boundary.
+• Class Encapsulation Strategy: Keeping the tracking buffer array bound inside self.buffer lets you call .sync_to_buffer() repeatedly across thousands of incoming matrix streaming events. This entirely shields your application loop from trash collection delays since the heap memory blocks are never torn down or re-provisioned.
