@@ -37,3 +37,18 @@ def yield_all_saddleback_strict(matrix, target):
             col -= 1
         else:
             row += 1
+
+
+
+
+# Demo: Mixed cluster and scattered text matrix
+data_matrix = [
+    ['A', 'B', 'C', 'C'],
+    ['B', 'C', 'C', 'D'],
+    ['C', 'C', 'D', 'E']
+]
+
+# Process coordinates one-by-one without storing them
+for coordinate in yield_all_saddleback_strict(data_matrix, 'C'):
+    # Do your work directly here (e.g., streaming to a file, database, or socket)
+    print(f"Processing item found at 
